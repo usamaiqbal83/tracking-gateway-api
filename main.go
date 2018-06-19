@@ -42,6 +42,9 @@ func trackOpenGateway(w http.ResponseWriter, r *http.Request) {
 					return
 				}
 				w.WriteHeader(res.StatusCode)
+				//w.WriteHeader(http.StatusOK)
+				w.Header().Set("Content-Type", "image/png")
+				w.Header().Set("Cache-Control", "no-cache, max-age=0")
 				w.Write(contents)
 				return
 			}
