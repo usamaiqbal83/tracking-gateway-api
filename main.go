@@ -14,6 +14,7 @@ const apiURL = "https://staging.leadfuze.com"
 
 func main() {
 	http.HandleFunc("/trk/o", trackOpenGateway)
+	fmt.Println("Server Starting listening at : " +strconv.Itoa(PORT))
 	err := http.ListenAndServe(":"+strconv.Itoa(PORT), nil)
 	if err != nil {
 		panic(err.Error())
