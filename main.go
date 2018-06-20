@@ -19,6 +19,7 @@ const apiURL = "https://staging.leadfuze.com"
 //https://lfclk.co/trk/o?t=ODY2NXwyNTYyMnwxMDY4Mjc3MQ==
 
 func main() {
+	InitLogger()
 	http.HandleFunc("/trk/o", trackOpenGateway)
 	logrus.Println("Server Starting listening at : " +strconv.Itoa(PORT))
 	err := http.ListenAndServe(":"+strconv.Itoa(PORT), nil)
